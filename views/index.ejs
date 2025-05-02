@@ -7,12 +7,12 @@
   </head>
   <body>
     <ol>
-      <% for (let i = 0; i < message.length; i++) { %>
+      <% name.forEach((n, i) => { %>
       <li>
-        <span> <%= message[i].user %> </span> says
-        <a href="/details/<%= i %>">Expand message</a>
+        <span> <%= n %> </span> says
+        <a href="/details/<%= ids[i] %>">Expand message</a>
       </li>
-      <% } %>
+      <% }) %>
     </ol>
   </body>
 </html>

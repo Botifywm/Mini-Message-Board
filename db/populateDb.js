@@ -23,8 +23,7 @@ VALUES
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString:
-      "postgresql://messageboard_ojn3_user:y6wI6Hz7pxVg8CVIKcnSxxIpIiKoUHDE@dpg-d09l7pogjchc7397rjmg-a.singapore-postgres.render.com/messageboard_ojn3",
+    connectionString: process.env.PGDATABASE_URL,
     ssl: {
       rejectUnauthorized: false, // Required for Render's self-signed certs
     },
@@ -32,7 +31,7 @@ async function main() {
   await client.connect();
   await client.query(SQL);
   await client.end();
-  console.log("done");
+  //   console.log("done");
 }
 
 main();
